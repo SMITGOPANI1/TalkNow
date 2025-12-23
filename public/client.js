@@ -192,7 +192,7 @@ let peerId;
 
 function showSearching() {
   statusOverlay.classList.remove("hidden");
-  statusOverlay.innerText = "Finding connection…";
+  // statusOverlay.innerText = "Finding connection…";
 }
 
 function hideSearching() {
@@ -264,9 +264,10 @@ socket.on("auto-find", () => {
 
 /* STOP */
 stopBtn.onclick = () => {
-    statusOverlay.classList.add("hidden");
+    // statusOverlay.classList.add("hidden");
 
   socket.emit("leave-peer");
+   hideSearching(); 
 
   isConnected = false;
   nextBtn.disabled = true;
